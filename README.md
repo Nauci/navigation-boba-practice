@@ -38,7 +38,7 @@ ToppingsViewController
 - In this step, we want the user to have the ability to select multiple toppings  
 - Whenever a topping is selected, we want to give the topping that was selected a green border. If a topping is not selected, it should have no border.  
 Let's say we have a view stored in a variable called myView. To give it a green border, you can use this code:  
-`myView.layer.border = UIColor.green`  
+`myView.layer.border = UIColor.green.cgColor`  
 `myView.layer.borderWidth = 1.0`  
 
 Then, we'll need to add another button with the text "NEXT". When this button is selected, continue to the final step.
