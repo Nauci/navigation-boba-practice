@@ -31,24 +31,52 @@ class DrinksViewController: UIViewController {
         self.matchaTeaImage.clipsToBounds = true
         self.strawberryTeaImage.clipsToBounds = true
 
-        self.milkTeaButton.addTarget(self, action: #selector(milkTeaPressed), for: .touchUpInside)
+        self.milkTeaButton.addTarget(self, action: #selector(teaPressed), for: .touchUpInside)
+        self.jasmineTeaButton.addTarget(self, action: #selector(teaPressed), for: .touchUpInside)
+        self.matchaTeaButton.addTarget(self, action: #selector(teaPressed), for: .touchUpInside)
+        self.strawberryTeaButton.addTarget(self, action: #selector(teaPressed), for: .touchUpInside)
     }
 
-    @objc private func milkTeaPressed() {
-
+    @objc private func teaPressed(button: UIButton) {
+        
+        var type = ""
+        
+        if button == milkTeaButton {
+            type = "Milk Tea"
+        }
+        else if button == jasmineTeaButton {
+            type = "Jasmine Tea"
+        }
+        else if button == matchaTeaButton {
+            type = "Matcha Tea"
+        }
+        else if button == strawberryTeaButton {
+            type = "Strawberry Tea"
+        }
+        
+        let sizeView = SizeViewController(tea: type)
+        self.navigationController?.pushViewController(sizeView, animated: true)
     }
-
-    @objc private func jasmineTeaPressed() {
-
-    }
-
-    @objc private func matchaTeaPressed() {
-
-    }
-
-    @objc private func strawberryTeaPressed() {
-
-    }
-
+//
+//
+//    @objc private func milkTeaPressed() {
+//        let sizeView = SizeViewController()
+//        self.navigationController?.pushViewController(sizeView, animated: true)
+//    }
+//
+//    @objc private func jasmineTeaPressed() {
+//        let sizeView = SizeViewController()
+//        self.navigationController?.pushViewController(sizeView, animated: true)
+//    }
+//
+//    @objc private func matchaTeaPressed() {
+//        let sizeView = SizeViewController()
+//        self.navigationController?.pushViewController(sizeView, animated: true)
+//    }
+//
+//    @objc private func strawberryTeaPressed() {
+//        let sizeView = SizeViewController()
+//        self.navigationController?.pushViewController(sizeView, animated: true)
+//    }
 }
 
